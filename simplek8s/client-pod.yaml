@@ -7,9 +7,9 @@ metadata:
 spec:
   containers:
     - name: client
-      image: stephengrider/multi-worker
+      image: stephengrider/multi-client
       ports:
-        - containerPort: 9999
+        - containerPort: 3000
       resources:
         limits:
           memory: 512Mi
