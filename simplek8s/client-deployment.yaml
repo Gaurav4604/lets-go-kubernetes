@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: client-deployment
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       component: web
@@ -13,10 +13,10 @@ spec:
           component: web
       spec:
         containers:
-          - image: stephengrider/multi-client
+          - image: gaurav4604/multi-deploy-client
             name: client
             ports:
-              - containerPort: 4000
+              - containerPort: 3000
             resources:
               limits:
                 memory: 512Mi
@@ -24,3 +24,4 @@ spec:
               requests:
                 memory: 256Mi
                 cpu: "0.2"
+# kubectl set image deployment/client-deployment client=gaurav4604/multi-deploy-client:v2

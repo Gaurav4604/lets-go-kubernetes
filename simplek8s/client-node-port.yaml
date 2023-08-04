@@ -6,7 +6,7 @@ spec:
   type: NodePort
   ports:
    -  port:  3050 # not useful since we do not want any other pod to access this pod
-      targetPort: 4000
+      targetPort: 3000
       nodePort: 31515 # the port used to access the pod, from outside world (value range from 30000 to 32767)
   selector:
     component: web
